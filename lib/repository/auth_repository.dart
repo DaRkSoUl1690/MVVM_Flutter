@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:mvvm_architecture/data/network/base_api_service.dart';
 import 'package:mvvm_architecture/data/network/network_api_service.dart';
 import 'package:mvvm_architecture/res/app_url.dart';
@@ -11,7 +13,7 @@ class AuthRepository {
           await _apiServices.getPostApiResponse(AppUrl.loginEndPint, data);
       return response;
     } catch (e) {
-      rethrow;
+      print(e);
     }
   }
 
@@ -21,7 +23,7 @@ class AuthRepository {
           AppUrl.registerApiEndPoint, data);
       return response;
     } catch (e) {
-      rethrow;
+      print(e);
     }
   }
 }
